@@ -1,0 +1,5 @@
+Please note, when setting up a repo for existing project folder 
+
+select the parent folder of folder where project files are stored
+
+- repo name should also match the root folder (creates new subfolder by default)
