@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cg7575bbfhad2"]
+
+[ext_resource type="PackedScene" uid="uid://bfjlvtljcisb6" path="res://graphics/characters/character.tscn" id="1_q200x"]
+[ext_resource type="PackedScene" uid="uid://cibru75pawpfc" path="res://graphics/characters/playerskin.tscn" id="2_bf0hw"]
+
+[node name="Player" unique_id=1488457797 instance=ExtResource("1_q200x")]
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=1412163375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Playerskin" parent="." index="1" unique_id=1525762774 instance=ExtResource("2_bf0hw")]

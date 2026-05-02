@@ -1,3 +1,24 @@
 [gd_scene format=3 uid="uid://cchu8eqcwayt0"]
 
+[ext_resource type="Material" uid="uid://bwcgjt6ghmoiw" path="res://graphics/test texture/test_material.material" id="1_eqihu"]
+[ext_resource type="PackedScene" uid="uid://cg7575bbfhad2" path="res://graphics/characters/player.tscn" id="2_61jgc"]
+
 [node name="Game" type="Node3D" unique_id=1641882262]
+
+[node name="Terrain" type="CSGCombiner3D" parent="." unique_id=807143499]
+use_collision = true
+collision_mask = 0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Terrain" unique_id=1460158654]
+transform = Transform3D(10, 0, 0, 0, 0.064, 0, 0, 0, 10, 0, 0, 0)
+material = ExtResource("1_eqihu")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Terrain" unique_id=1990243998]
+transform = Transform3D(1.8000001, 0, 0, 0, 0.7, 0, 0, 0, 1.75, -1, 0.3, -1)
+material = ExtResource("1_eqihu")
+
+[node name="Characters" type="Node3D" parent="." unique_id=1620356052]
+
+[node name="Player" parent="Characters" unique_id=1488457797 instance=ExtResource("2_61jgc")]
+collision_layer = 2
+collision_mask = 5
