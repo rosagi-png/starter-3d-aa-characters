@@ -9,3 +9,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Playerskin" parent="." index="1" unique_id=1525762774 instance=ExtResource("2_bf0hw")]
+
+[node name="Camera3D" type="Camera3D" parent="." index="2" unique_id=1253021633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
