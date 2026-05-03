@@ -1,0 +1,109 @@
+4:20 state
+
+CSG combiner > CSG box (Terrain) > CSG box (terrain item)
+
+ADD TEST MATERIAL .SVG AND COLOUR HEX VALUE, APPLY QUICKLOAD TO SUBSEQUENT OBJECTS
+
+___________________
+
+Collision Layers - setup in Project settings: Layer names > 3d physics
+
+CSGcombiner 'Terrain': CSGShape3d: Use Collision [x], ensure collision mask is [empty]
+
+
+_____________________________________________
+
+Base Character
+
+create new scene (CharacterBody3d as root), add CollisionShape3d as child (capsule)
+save as character.tscn  (characters folder)
+
+
+New (inherited scene - character.tscn, rename Player, save as player.tscn
+
+_____________________________________________
+
+Character model clean up
+
+new scene (3d scene) - rename [Playerskin], drag /characters/Rogue.glb under Playerskin
+
+	Right click > make local (make all character components available)
+
+	remove all unwanted bone attachments; leaving 
+		Rogue_ArmLeft
+		Rogue_ArmRight
+		Rogue_Body
+		Rogue_Head
+		Rogue_LegLeft
+		Rogue_LegRight
+	
+
+___________________________________________________
+
+Adding player to the Game Scene
+
+Add Node 3d under Game scene node, rename Characters, Add player.tscn underneath
+
+Under Player scene
+
+	set Collision layer to 2, and mask to 1 and 3 (terrain and enemies)
+	
+	Add Playerskin.tscn as child
+
+	Add Camera3D (position view of character)
+
+pushed to origin (GitHub desktop_
+5:20 (1 hour)
+____________________________________________________________
+____________________________________________________________
+later: added scene lighting (sunlight) and environment, saved as main scene, pushed git
+
+__________________________
+
+
+3:40 
+
+recap Basic Player and Level, 
+
+CSGCombiner3D Node (CSG node encapsulates other CSG3D geometry structure)
+
+3DCharacter prefabs
+	
+	Player.tsn - Character3D node  > collision shape
+
+	Playerskin (node3d) - encapsulates
+		> character (node3d) rogue.glb
+			> Rig (node3d)
+				>Skeleton3D (localised skeleton instance)
+			>AnimationPlayer
+
+_____________________________
+
+3:55 STOP - project not synced from gitkraken
+
+
+4:10 START
+
+Environment and lighting
+
+Background >mode: custom colour
+
+Ambient > source: custom colour
+
+SSR [x] - screen space reflections
+
+SSAO [x] -screen space ambient occlusion
+
+glow - intensity (.9), strength (.85)
+
+_
+
+fog - density
+
+volumetric fog - density
+
+__
+
+Adjustments - brightness (1.1), contrast (1.2), saturation (1.0)
+
+4:30 STOP (40min/50m)
