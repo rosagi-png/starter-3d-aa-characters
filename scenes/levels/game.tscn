@@ -3,23 +3,30 @@
 [ext_resource type="Material" uid="uid://bwcgjt6ghmoiw" path="res://graphics/test texture/test_material.material" id="1_eqihu"]
 [ext_resource type="PackedScene" uid="uid://cg7575bbfhad2" path="res://graphics/characters/player.tscn" id="2_61jgc"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eqihu"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_61jgc"]
-sky_material = SubResource("ProceduralSkyMaterial_eqihu")
-
-[sub_resource type="Environment" id="Environment_riktp"]
-background_mode = 2
-sky = SubResource("Sky_61jgc")
-tonemap_mode = 2
+[sub_resource type="Environment" id="Environment_eqihu"]
+background_mode = 1
+background_color = Color(0.48235294, 0.50980395, 0.9019608, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.96862745, 0.8352941, 0.85882354, 1)
+ambient_light_energy = 0.6
+ssr_enabled = true
+ssao_enabled = true
 glow_enabled = true
+glow_intensity = 0.09
+glow_strength = 0.85
+fog_enabled = true
+fog_light_color = Color(0.7200534, 0.7468135, 0.7884423, 1)
+fog_density = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_contrast = 1.1
 
 [node name="Game" type="Node3D" unique_id=1641882262]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=300804755]
-environment = SubResource("Environment_riktp")
+environment = SubResource("Environment_eqihu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1368483785]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
