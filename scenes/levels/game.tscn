@@ -3,7 +3,28 @@
 [ext_resource type="Material" uid="uid://bwcgjt6ghmoiw" path="res://graphics/test texture/test_material.material" id="1_eqihu"]
 [ext_resource type="PackedScene" uid="uid://cg7575bbfhad2" path="res://graphics/characters/player.tscn" id="2_61jgc"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eqihu"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_61jgc"]
+sky_material = SubResource("ProceduralSkyMaterial_eqihu")
+
+[sub_resource type="Environment" id="Environment_riktp"]
+background_mode = 2
+sky = SubResource("Sky_61jgc")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="Game" type="Node3D" unique_id=1641882262]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=300804755]
+environment = SubResource("Environment_riktp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1368483785]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
 
 [node name="Terrain" type="CSGCombiner3D" parent="." unique_id=807143499]
 use_collision = true
