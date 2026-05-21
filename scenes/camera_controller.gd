@@ -1,0 +1,17 @@
+extends SpringArm3D
+#camera ranges
+@export var min_limit_x: float
+@export var max_limit_x: float
+@export var horizontal_acceleration: float = 2
+@export var vertical_acceleration: float = 1
+@export var mouse_acceleration: float = 0.005
+
+#input vector from player controller -input map
+func _process(delta: float) -> void:
+	var joy_dir = Input.get_vector("pan_left", "pan_right", "pan_up", "pan_down")
+	var joy_dir_accelerated = joy_dir * delta * Vector2(horizontal_acceleration, vertical_acceleration)
+	rotate_from_vector(joy_dir_accelerated)
+
+func rotate_from_vector(v: Vector2):
+	if v.length() == 0 : return
+	rotation.y -= v.x

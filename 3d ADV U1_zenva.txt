@@ -107,3 +107,22 @@ __
 Adjustments - brightness (1.1), contrast (1.2), saturation (1.0)
 
 4:30 STOP (40min/50m)
+
+____________
+
+21.05 5:00pm
+
+Camera setup
+  two functions - get joy direction (input map)
+- get joy dir acc (dir * delta * Vector2(horacc,vertacc)
+rotate_from_vector(joy_accelerated)
+
+func rotate_from_vector(v: Vector2):
+	rotate.y -= v.x
+	rotate.x -= v.y
+	rotate.x = clamp(rotation.x, min_limit_x, min_limit_x)
+	
+
+/// no input map, see: downloaded zip project.godot ([input])
+
+5:59pm

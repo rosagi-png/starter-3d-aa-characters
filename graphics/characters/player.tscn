@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bfjlvtljcisb6" path="res://graphics/characters/character.tscn" id="1_q200x"]
 [ext_resource type="PackedScene" uid="uid://cibru75pawpfc" path="res://graphics/characters/playerskin.tscn" id="2_bf0hw"]
+[ext_resource type="PackedScene" uid="uid://0dt5161sgkbc" path="res://scenes/camera_controller.tscn" id="3_qfckn"]
+[ext_resource type="Script" uid="uid://bub0o8hiit0cp" path="res://scenes/camera_controller.gd" id="4_povyc"]
 
 [node name="Player" unique_id=1488457797 instance=ExtResource("1_q200x")]
 
@@ -10,5 +12,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Playerskin" parent="." index="1" unique_id=1525762774 instance=ExtResource("2_bf0hw")]
 
-[node name="Camera3D" type="Camera3D" parent="." index="2" unique_id=1253021633]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2)
+[node name="CameraController" parent="." index="2" unique_id=691879925 instance=ExtResource("3_qfckn")]
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 1.4, 0)
+script = ExtResource("4_povyc")
