@@ -16,4 +16,4 @@ func rotate_from_vector(v: Vector2):
 	if v.length() == 0 : return
 	rotation.y -= v.x #only rotates side/side
 	rotation.x -= v.y #adds vertical pan/rotate
-#	rotation.x = clamp(rotation.x, min_limit_x, max_limit_x)
+	rotation.x = clamp(rotation.x, min_limit_x, max_limit_x)
