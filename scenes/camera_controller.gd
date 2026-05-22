@@ -1,7 +1,7 @@
 extends SpringArm3D
 #camera ranges
-@export var min_limit_x: float
-@export var max_limit_x: float
+@export var min_limit_x: float = -0.8
+@export var max_limit_x: float = -0.2
 @export var horizontal_acceleration: float = 2
 @export var vertical_acceleration: float = 1
 @export var mouse_acceleration: float = 0.005
@@ -14,4 +14,6 @@ func _process(delta: float) -> void:
 
 func rotate_from_vector(v: Vector2):
 	if v.length() == 0 : return
-	rotation.y -= v.x
+	rotation.y -= v.x #only rotates side/side
+	rotation.x -= v.y #adds vertical pan/rotate
+#	rotation.x = clamp(rotation.x, min_limit_x, max_limit_x)

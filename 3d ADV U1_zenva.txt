@@ -125,4 +125,44 @@ func rotate_from_vector(v: Vector2):
 
 /// no input map, see: downloaded zip project.godot ([input])
 
-5:59pm
+5:59pm (53min)
+
+22/5
+3:25pm
+
+if v.length() == 0: return
+#stops execution if vector (length()) == 0 
+used to stop division by 0 when normalising/angles
+
+normalisation: results in a unit vector (-1,1)
+(isolates direction from magnitude)
+
+eg keyboard input: x+1, y+2 = (1,1) 
+
+//input mad 'pan_left' does not exist
+
+//tired sleepy/distracted
+- reloaded * working (x and y pan/rotate)
+
+/snaps to middle range y, allows 360" rotation
+ -no min/max x range actually definied
+/still rotating 360" at centre x (height)
+ - inverse range not defined
+*fixed stop at overhead -0.2 and below -0.8
+
+4:30 (53min / 1hr)
+
+
+summary of camera input control
+
+define variable
+x min:
+x max:
+horizon acc:
+vertical acc:
+
+multiply input by predefined x/y acceleration, clamp to limits
+
+
+get joyvector from (input.keypresses)
+derive acceleration from joyvector *delta * Vector2(xacc,yacc)
