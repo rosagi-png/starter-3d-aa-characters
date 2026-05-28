@@ -169,3 +169,11 @@ derive acceleration from joyvector *delta * Vector2(xacc,yacc)
 
 4:36 (1hr /1hr11min)
 __________________________
+
+3:30 broom bar
+
+camera controller, script attached
+
+//space indentation error (replace with tabs, indent under if)
+
+3:50

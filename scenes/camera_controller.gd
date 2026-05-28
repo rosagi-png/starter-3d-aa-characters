@@ -7,12 +7,17 @@ extends SpringArm3D
 @export var mouse_acceleration: float = 0.005
 
 #input vector from player controller -input map
-func _process(delta: float) -> void:
-	var joy_dir = Input.get_vector("pan_left", "pan_right", "pan_up", "pan_down")
-	var joy_dir_accelerated = joy_dir * delta * Vector2(horizontal_acceleration, vertical_acceleration)
-	rotate_from_vector(joy_dir_accelerated)
+#func _process(delta: float) -> void:
+#	var joy_dir = Input.get_vector("pan_left", "pan_right", "pan_up", "pan_down")
+#	var joy_dir_accelerated = joy_dir * delta * Vector2(horizontal_acceleration, vertical_acceleration)
+#	rotate_from_vector(joy_dir_accelerated)
 
-func rotate_from_vector(v: Vector2):
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		var mouse_dir_accelerated = event.relative * mouse_acceleration
+		rotate_from_vector(mouse_dir_accelerated)
+
+func rotate_from_vector(v: Vector2): 
 	if v.length() == 0 : return
 	rotation.y -= v.x #only rotates side/side
 	rotation.x -= v.y #adds vertical pan/rotate
