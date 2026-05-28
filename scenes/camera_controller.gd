@@ -12,13 +12,21 @@ extends SpringArm3D
 #	var joy_dir_accelerated = joy_dir * delta * Vector2(horizontal_acceleration, vertical_acceleration)
 #	rotate_from_vector(joy_dir_accelerated)
 
+#sets mouse mode to capture input beyond window 
+#disallows input beyond window tab
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		var mouse_dir_accelerated = event.relative * mouse_acceleration
 		rotate_from_vector(mouse_dir_accelerated)
+		#if ESC is pressed, then quit
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
 
 func rotate_from_vector(v: Vector2): 
 	if v.length() == 0 : return
-	rotation.y -= v.x #only rotates side/side
-	rotation.x -= v.y #adds vertical pan/rotate
+	rotation.y -= v.x #only rotates side/side?
+	rotation.x -= v.y #adds vertical pan/rotate?
 	rotation.x = clamp(rotation.x, min_limit_x, max_limit_x)
