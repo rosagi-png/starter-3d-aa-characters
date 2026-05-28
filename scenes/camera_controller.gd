@@ -12,8 +12,7 @@ extends SpringArm3D
 #	var joy_dir_accelerated = joy_dir * delta * Vector2(horizontal_acceleration, vertical_acceleration)
 #	rotate_from_vector(joy_dir_accelerated)
 
-#sets mouse mode to capture input beyond window 
-#disallows input beyond window tab
+#prevents mouse capture beyond window
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
