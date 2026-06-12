@@ -193,3 +193,58 @@ if Input.is_action_just_pressed("ui_cancel")
 get_tree().quit()
 
 4:23 STOP (53min) InputEventMouseMotion - event.relative
+
+
+_______________________
+
+12/06
+
+3:55pm
+
+recap: 3d adventure project overview 
+
+- working in 3d
+
+- how to work with skeletons
+_________
+
+camera in place, we can move character
+
+convert U P L R to 3d direction
+
+//filesystem/finding scene (file manager, deleting unattched scripts (resource tab)
+
+4:14 pm - create Character prefab (base script)
+
+*class_name Character
+
+add @export var base_speed: float = 4 (speed)
+
+var movement_input: Vector2 (direction)
+
+
+add 	move_logic (delta)
+	move_and_slide()
+
+add @export accel, decel values
+
+add move logic : convert input to movement variable, 
+x/z velocity to vel_2d, 
+# movement_input = Input.get_vector("left", "right", "forward", "backward")
+
+# var vel_2d = Vector2(velocity.x, velocity.z)
+
+#'if input more than zero then 
+ vel_2d += movement_input * base_speed * delta * acceleration
+ (vel_2d = vel_2d.limit_length(base_speed)
+ else
+ vel_2d.move_toward(Vector2.ZERO ... )
+
+summary
+
+input * speed * acc *delta 
+
+4:53: BREAK (~53min)
+
+test//input not working / no errors
+
