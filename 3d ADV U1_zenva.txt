@@ -247,4 +247,14 @@ input * speed * acc *delta
 4:53: BREAK (~53min)
 
 test//input not working / no errors
+18/06
+21:15pm
+re scrubbing - character movement //godot bug - player did not have script attached in game scene
 
+//error in debugger 
+eg 
+E 0:00:00:824   player.gd:14 @ move_logic(): The InputMap action "move_forward" doesn't exist. Did you mean "forward"?
+  <C++ Error>   Condition "!input_map.has(p_action)" is true. Returning: 0.0f
+  <C++ Source>  core/input/input_map.cpp:190 @ action_get_deadzone()
+  <Stack Trace> player.gd:14 @ move_logic()
+				player.gd:4 @ _physics_process()

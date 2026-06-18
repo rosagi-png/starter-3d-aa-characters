@@ -48,6 +48,3 @@ material = ExtResource("1_eqihu")
 [node name="Characters" type="Node3D" parent="." unique_id=1620356052]
 
 [node name="Player" parent="Characters" unique_id=1488457797 instance=ExtResource("2_61jgc")]
-collision_layer = 2
-collision_mask = 5
-script = null
