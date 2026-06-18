@@ -248,7 +248,10 @@ input * speed * acc *delta
 
 test//input not working / no errors
 18/06
-21:15pm
+
+
+
+9:15pm
 re scrubbing - character movement //godot bug - player did not have script attached in game scene
 
 //error in debugger 
@@ -258,3 +261,14 @@ E 0:00:00:824   player.gd:14 @ move_logic(): The InputMap action "move_forward" 
   <C++ Source>  core/input/input_map.cpp:190 @ action_get_deadzone()
   <Stack Trace> player.gd:14 @ move_logic()
 				player.gd:4 @ _physics_process()
+fixed player input map
+
+*debug print message working
+
+*movement working
+
+*Game scene, player node deleted, re-added as child scene (w script attached)
+
+*player orientation corrected
+*game scene working (move and slide)
+9:30pm sTOP (15min)
